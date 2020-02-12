@@ -9,7 +9,7 @@ const GetLoginPassIdClient = `SELECT login, password, id FROM clients WHERE logi
 const InsertClient = `INSERT INTO clients(name, surname, login, password) VALUES (:name, :surname, :login, :password);`
 const InsertClientCard = `INSERT INTO clients_cards(pan, pin, balance, holderName, cvv, validity, client_id) VALUES (:pan, :pin, :balance, :holderName, :cvv, :validity, :clientId);`
 const GetLastPAN = `SELECT ifnull(max(pan),0) FROM clients_cards;`
-const InsertService = `INSERT INTO services(service) VALUES (:serviceName);`
+const InsertService = `INSERT INTO services(service, balance) VALUES (:serviceName, :serviceBalance);`
 const InsertAtm = `INSERT INTO atms(city, district, street) VALUES (:cityName, :districtName, :streetName);`
 
 ///////////////////////////////////// queries for Client ///////////////////////////////////////////////////
