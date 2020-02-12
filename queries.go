@@ -17,7 +17,7 @@ const GetNameSurNameFromIdClient = `SELECT name, surname FROM clients WHERE id =
 ///////////////////////////////////// queries for Client ///////////////////////////////////////////////////
 const GetCards = `SELECT id, pan, pin, balance, holderName, cvv, validity FROM clients_cards WHERE client_id = :idClient;`
 const GetTransferCard = `SELECT count(pan) FROM clients_cards WHERE client_id = :idClient;`
-const SelectCardWhoHaveManyCards  = `SELECT pan FROM clients_cards where client_id = ? AND pan = ?;`
+const SelectCardWhoHaveManyCards = `SELECT pan FROM clients_cards where client_id = ? AND pan = ?;`
 const OutOneAmmount = `UPDATE clients_cards SET balance = balance - :amount WHERE client_id= :idClient AND balance >= :amount;`
 const OutMoreOneAmmount = `UPDATE clients_cards SET balance = balance - :amount WHERE pan= :panClient AND balance >= :amount;`
 const CheckPAN = `select pan from clients_cards where pan = ?;`
