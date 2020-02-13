@@ -12,6 +12,7 @@ const GetLastPAN = `SELECT ifnull(max(pan),0) FROM clients_cards;`
 const InsertService = `INSERT INTO services(service, balance) VALUES (:serviceName, :serviceBalance);`
 const InsertAtm = `INSERT INTO atms(city, district, street) VALUES (:cityName, :districtName, :streetName);`
 const CheckIdClient = `SELECT id FROM clients WHERE id = ?;`
+const CheckLoginClient = `SELECT login FROM clients WHERE login = ?;`
 const GetNameSurNameFromIdClient = `SELECT name, surname FROM clients WHERE id = ?;`
 
 ///////////////////////////////////// queries for Client ///////////////////////////////////////////////////
